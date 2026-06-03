@@ -30,8 +30,6 @@ if (flipButton) {
   });
 }
 
-const aiChatIconUrl = "./beautiful_ai_logo.jpg";
-
 function applyAiChatIcon() {
   const bubble = [...document.querySelectorAll("body div")].find((element) => {
     const style = getComputedStyle(element);
@@ -52,15 +50,23 @@ function applyAiChatIcon() {
   bubble.dataset.toolFinderIcon = "ai";
   bubble.setAttribute("aria-label", "ToolFinder AI yordamchi");
   bubble.style.background = "#ffffff";
-  bubble.style.backgroundImage = `url("${aiChatIconUrl}")`;
-  bubble.style.backgroundRepeat = "no-repeat";
-  bubble.style.backgroundPosition = "center";
-  bubble.style.backgroundSize = "34px 34px";
-  bubble.style.border = "2px solid rgba(0, 123, 255, 0.35)";
+  bubble.style.backgroundImage = "none";
+  bubble.style.border = "2px solid rgba(0, 123, 255, 0.45)";
+  bubble.style.color = "#0d6efd";
+  bubble.style.fontSize = "18px";
+  bubble.style.fontWeight = "900";
+  bubble.style.letterSpacing = "0";
 
   const svg = bubble.querySelector("svg");
   if (svg) {
     svg.style.display = "none";
+  }
+
+  if (!bubble.querySelector(".toolfinder-ai-bubble-text")) {
+    const label = document.createElement("span");
+    label.className = "toolfinder-ai-bubble-text";
+    label.textContent = "AI";
+    bubble.appendChild(label);
   }
 }
 

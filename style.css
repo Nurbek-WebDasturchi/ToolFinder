@@ -325,6 +325,22 @@ li {
   background-color: rgb(34, 66, 205);
   color: #ffffff;
 }
+.tool-letter-logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1;
+}
+.perplexity-logo {
+  background: linear-gradient(135deg, #16b8a6, #153c8a);
+}
 .trend-back-btn {
   display: block;
   width: min(100%, 260px);
