@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToolFinder AI</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container-fluid main-container p-0">
+      <div class="row d-flex justify-content-center h-100 p-0">
+        <div class="col-12 p-0">
+          <nav class="d-flex justify-content-between p-3 align-items-center">
+            <div class="d-flex">
+              <h1 class="font mx-md-5 d-flex align-items-center d-md-none mt-0">
+                ToolFinder
+              </h1>
+              <h1 class="font mx-md-5 d-none d-md-block">ToolFinder</h1>
+              <a
+                href="#main"
+                class="text-decoration-none text-light rounded p-2 mx-2 a-link d-none d-md-block"
+                type="button"
+                >Asosiy</a
+              >
+              <a
+                href="#trend"
+                class="text-decoration-none text-light rounded p-2 mx-2 a-link d-none d-md-block"
+                type="button"
+                >Trendda
+              </a>
+              <a
+                class="text-light text-decoration-none d-none d-md-block align-items-center p-2 mx-2 a-link"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+              >
+                Dastur haqida
+              </a>
+              <a
+                href="#tools"
+                class="text-decoration-none text-light rounded p-2 mx-2 a-link d-none d-md-block"
+                type="button"
+              >
+                AI linklar
+              </a>
+            </div>
+            <div class="d-flex">
+              <div
+                class="offcanvas offcanvas-top bg bg-dark"
+                tabindex="-1"
+                id="offcanvasTop"
+                aria-labelledby="offcanvasTopLabel"
+              >
+                <div class="offcanvas-header">
+                  <h5
+                    class="offcanvas-title fs-1 fw-bold text-primary"
+                    id="offcanvasTopLabel"
+                  >
+                    Menu
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close bg bg-danger"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div
+                  class="offcanvas-body d-flex flex-column justify-content-center bg"
+                >
+                  <a
+                    href="#main"
+                    class="text-decoration-none text-dark rounded p-2 mx-2 a-link border border-dark w-100 m-1 bg bg-primary"
+                    type="button"
+                  >
+                    Asosiy menyu
+                  </a>
+                  <a
+                    href="#trend"
+                    class="text-decoration-none text-dark rounded p-2 mx-2 a-link border border-dark w-100 m-1 bg bg-primary"
+                    type="button"
+                    >Trendda
+                  </a>
+                  <a
+                    class="text-dark text-decoration-none d-flex align-items-center p-2 mx-2 a-link border border-dark w-100 rounded m-1 bg bg-primary"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                  >
+                    Versiya
+                  </a>
+                  <a
+                    href="#tools"
+                    class="text-decoration-none text-dark rounded p-2 mx-2 a-link border border-dark w-100 m-1 bg bg-primary"
+                    type="button"
+                  >
+                    AI linklar
+                  </a>
+                </div>
+              </div>
+              <div class="d-flex px-4">
+                <!-- Icons -->
+                <a
+                  type="button"
+                  class="text-primary mx-3 d-none"
+                  href="./login.html"
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-box-arrow-in-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  class="text-primary account-icon__position d-md-none"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-person-circle"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                    <path
+                      fill-rule="evenodd"
+                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+                    />
+                  </svg>
+                </a>
+                <a
+                  class="text-primary d-md-none"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasTop"
+                  aria-controls="offcanvasTop"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-list"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                    />
+                  </svg>
+                </a>
+                <button
+                  class="bg bg-primary rounded-circle d-none d-md-flex justify-content-center align-items-center px-3 py-0"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"
+                >
+                  <h2 class="text-light fw-bold fs-5 text-center">J</h2>
+                </button>
+
+                <div
+                  class="offcanvas offcanvas-end"
+                  tabindex="-1"
+                  id="offcanvasRight"
+                  aria-labelledby="offcanvasRightLabel"
+                >
+                  <div
+                    class="offcanvas-header d-flex flex-column justify-content-between m-0 bg bg-dark"
+                  >
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <a
+                        type="button"
+                        class="text-decoration-none mx-2"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="25"
+                          height="25"
+                          fill="currentColor"
+                          class="bi bi-arrow-left-circle"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"
+                          />
+                        </svg>
+                      </a>
+                      <img
+                        src="./Jahongir_logo.jpg"
+                        alt="cdn"
+                        class="img-fluid rounded-circle"
+                      />
+                      <div class="d-flex flex-column m-2">
+                        <div class="d-flex align-items-center">
+                          <h5
+                            class="offcanvas-title text-light"
+                            id="offcanvasRightLabel"
+                          >
+                            Jahongir Ozodboyev
+                          </h5>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-check-circle-fill text-primary mx-2"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+                            />
+                          </svg>
+                        </div>
+                        <h5 class="text-primary">G'oya muallifi</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offcanvas-body p-0">
+                    <ul class="list-group w-100 d-flex">
+                      <li class="list-group-item p-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-person-circle"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                          <path
+                            fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+                          />
+                        </svg>
+                        <a href="#" class="text-decoration-none">Profilim</a>
+                      </li>
+                      <li class="list-group-item p-2 d-flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-envelope-arrow-up-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zm.192 8.159 6.57-4.027L8 9.586l1.239-.757.367.225A4.49 4.49 0 0 0 8 12.5c0 .526.09 1.03.256 1.5H2a2 2 0 0 1-1.808-1.144M16 4.697v4.974A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-1.965.45l-.338-.207z"
+                          />
+                          <path
+                            d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.354 1.25 1.25a.5.5 0 0 1-.708.708L13 12.207V14a.5.5 0 0 1-1 0v-1.717l-.28.305a.5.5 0 0 1-.737-.676l1.149-1.25a.5.5 0 0 1 .722-.016"
+                          />
+                        </svg>
+                        <a href="#" class="text-decoration-none"
+                          >Saytdagi seanslar</a
+                        >
+                      </li>
+                      <li class="list-group-item p-2 d-flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-gear"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"
+                          />
+                          <path
+                            d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"
+                          />
+                        </svg>
+                        <a href="#" class="text-decoration-none">Sozlamalar</a>
+                      </li>
+                      <li class="list-group-item p-2 d-flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-arrow-clockwise"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+                          />
+                          <path
+                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
+                          />
+                        </svg>
+                        <a href="#" class="text-decoration-none"
+                          >Yangilanishlar</a
+                        >
+                      </li>
+                      <li class="list-group-item p-2 d-flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-box-arrow-left text-danger"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"
+                          />
+                        </svg>
+                        <a href="#" class="text-decoration-none text-danger"
+                          >Chiqish</a
+                        >
+                      </li>
+                    </ul>
+                    <div class="rounded border border-primary m-3 p-2">
+                      <h4 class="mt-1">ToolFinder haqida</h4>
+                      <h6>
+                        ToolFinder - 2026-yilda trend bo'layotgan AI
+                        xizmatlarini topish va ularning rasmiy havolasiga tez
+                        o'tish uchun yaratilgan loyiha. Sayt kurs yoki to'garak
+                        uchun emas, amaliy AI katalog sifatida ishlaydi.
+                      </h6>
+                    </div>
+                    <h6 class="border border-primary rounded p-4 m-3">
+                      Dasturchi -
+                      <a
+                        class="text-decoration-none"
+                        href="https://vizitka-blond.vercGel.app/"
+                        target="_blank"
+                        >Ozodboyev Jahongir</a
+                      >
+                      loyiha muallifi.
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="col-12 py-5 d-flex col-12-custom">
+          <div
+            class="row w-100 d-flex row-robot justify-content-end align-items-center"
+          >
+            <div class="col-6 d-md-none h-100">
+              <img
+                src="./3d-casual-life-chatbot-with-text-messages.png"
+                alt="error load image"
+                class="img-fluid img-robot"
+              />
+            </div>
+          </div>
+          <div class="row p-5 d-none d-md-flex row-logos">
+            <div class="col-4 p-0">
+              <img
+                src="./CHATGPT-PLUS.png"
+                alt="0101 error"
+                class="img-fluid ai-img"
+              />
+            </div>
+            <div class="col-4 p-0">
+              <img
+                src="./copilot-icon.png"
+                alt="0101_error"
+                class="img-fluid ai-img rounded"
+              />
+            </div>
+            <div class="col-4 p-0">
+              <img
+                src="./google-gemini-icon.png"
+                alt="AI Omage"
+                class="img-fluid ai-img"
+              />
+            </div>
+            <div class="col-4 p-0 d-none d-md-block">
+              <img
+                src="./wepik_14649076.png"
+                alt="AI Omage"
+                class="img-fluid ai-img"
+              />
+            </div>
+            <div class="col-4 p-0 d-none d-md-block">
+              <img
+                src="./beautiful_ai_logo.jpg"
+                alt="AI Omage"
+                class="img-fluid ai-img"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 offset-md-2 text-bg__image">
+          <h2 class="text-tittle">
+            ToolFinder 2026-yilda trend bo'layotgan
+            <span class="text-primary">AI vositalarini</span>
+            ko'rsatadi va har birining rasmiy linkini beradi. Matn, kod, rasm,
+            video, qidiruv va audio uchun eng kerakli servislarni bir joydan
+            toping.
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container-cards" id="main">
+      <div class="row">
+        <div class="col-12 col-md-7">
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div
+                class="carousel-item active d-flex justify-content-center flex-column w-100"
+              >
+                <div class="row row-custom mt-5 d-flex flex-wrap offset-md-1">
+                  <h2 class="main-info text-center">
+                    2026 trend AI vositalari
+                  </h2>
+
+                  <div
+                    class="col-10 col-md-3 rounded py-2 d-flex justify-content-center flex-column border border-dark bg bg-light mt-3"
+                  >
+                    <img
+                      src="./ai1.png"
+                      alt="Logo"
+                      class="img-fluid"
+                      style="height: 100px"
+                    />
+                    <p class="text-decoration-none text-center text-dark">
+                      ChatGPT
+                    </p>
+                    <a
+                      href="https://chatgpt.com/"
+                      target="_blank"
+                      class="btn btn-primary m-1"
+                      >Batafsil</a
+                    >
+                  </div>
+                  <div
+                    class="col-10 col-md-3 rounded py-2 d-flex justify-content-center flex-column border border-dark bg bg-light mt-3 border border-dark"
+                  >
+                    <img
+                      src="./google-gemini-icon.png"
+                      alt="Logo"
+                      class="img-fluid"
+                      style="height: 100px"
+                    />
+                    <p class="text-decoration-none text-center">Gemini</p>
+                    <a
+                      href="https://gemini.google.com/"
+                      target="_blank"
+                      class="btn btn-primary m-1"
+                      >Batafsil</a
+                    >
+                  </div>
+                  <div
+                    class="col-10 col-md-3 rounded py-2 d-flex justify-content-center flex-column border border-dark bg bg-light mt-3"
+                  >
+                    <img
+                      src="./ai_main_image.jpg"
+                      alt="Logo"
+                      class="img-fluid bg bg-dark"
+                      style="height: 100px"
+                    />
+                    <p class="text-decoration-none text-center">Claude</p>
+                    <a
+                      href="https://claude.ai/"
+                      target="_blank"
+                      class="btn btn-primary m-1"
+                      >Batafsil</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="row row-custom mt-5 d-flex flex-wrap offset-md-1 second-row"
+                >
+                  <div
+                    class="col-10 col-md-3 rounded py-2 d-flex justify-content-center flex-column border border-dark bg bg-light mt-3"
+                  >
+                    <img
+                      src="copilot-icon.png"
+                      alt="Logo"
+                      class="img-fluid"
+                      style="height: 100px"
+                    />
+                    <p class="text-decoration-none text-center">Perplexity</p>
+                    <a
+                      href="https://www.perplexity.ai/"
+                      target="_blank"
+                      class="btn btn-primary m-1"
+                      >Batafsil</a
+                    >
+                  </div>
+                  <div
+                    class="col-10 col-md-3 rounded py-2 d-flex justify-content-center flex-column border border-dark bg bg-light mt-3"
+                  >
+                    <img
+                      src="./copilot-icon.png"
+                      alt="Logo"
+                      class="img-fluid"
+                      style="height: 100px"
+                    />
+                    <p class="text-decoration-none text-center">
+                      Microsoft Copilot
+                    </p>
+                    <a
+                      href="https://copilot.microsoft.com/"
+                      target="_blank"
+                      class="btn btn-primary m-1"
+                      >Batafsil</a
+                    >
+                  </div>
+                  <div
+                    class="col-10 col-md-3 rounded py-2 d-flex justify-content-center flex-column border border-dark bg bg-light mt-3"
+                  >
+                    <img
+                      src="./summify.svg"
+                      alt="Logo"
+                      class="img-fluid"
+                      style="height: 100px"
+                    />
+                    <p class="text-decoration-none text-center">Midjourney</p>
+                    <a
+                      href="https://www.midjourney.com/"
+                      target="_blank"
+                      class="btn btn-primary m-1"
+                      >Batafsil</a
+                    >
+                  </div>
+                  <div
+                    class="col-10 d-none d-md-flex justify-content-center m-2 p-0"
+                  >
+                    <!-- click-btn carousel-control-next -->
+                    <button
+                      class="btn btn-success w-100 mt-3"
+                      type="button"
+                      data-bs-target="#carouselExample"
+                      data-bs-slide="next"
+                    >
+                      Trend ro'yxati
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item carousel-custom h-100 m-0">
+                <div class="trend-list-panel">
+                  <h2 class="trend-list-title">2026 trend AI ro'yxati</h2>
+                  <div class="trend-list-grid">
+                    <a href="https://chatgpt.com/" target="_blank">ChatGPT</a>
+                    <a href="https://claude.ai/" target="_blank">Claude</a>
+                    <a href="https://gemini.google.com/" target="_blank"
+                      >Gemini</a
+                    >
+                    <a href="https://www.perplexity.ai/" target="_blank"
+                      >Perplexity</a
+                    >
+                    <a href="https://copilot.microsoft.com/" target="_blank"
+                      >Microsoft Copilot</a
+                    >
+                    <a href="https://www.midjourney.com/" target="_blank"
+                      >Midjourney</a
+                    >
+                    <a href="https://runwayml.com/" target="_blank">Runway</a>
+                    <a href="https://elevenlabs.io/" target="_blank"
+                      >ElevenLabs</a
+                    >
+                    <a href="https://cursor.com/" target="_blank">Cursor</a>
+                    <a href="https://www.notion.com/product/ai" target="_blank"
+                      >Notion AI</a
+                    >
+                  </div>
+                  <button
+                    class="btn btn-success trend-back-btn"
+                    type="button"
+                    data-bs-target="#carouselExample"
+                    data-bs-slide="prev"
+                  >
+                    Orqaga
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container-posts">
+      <div class="row justify-content-center">
+        <h2 class="main-info offset-3" id="trend">Foydali postlar</h2>
+        <div class="col-12 d-flex justify-content-center mb-5 video-column">
+          <div class="mx-4 d-flex flex-column">
+            <h2 class="text-tittle">Bepul va pullik AIlar</h2>
+            <video
+              controls
+              loop
+              poster="./photo_vide1.jpg"
+              height="600px"
+              width="335px"
+              class="video"
+            >
+              <source
+                src="./SaveVid.Net_524DFDCBAECF0AAB124AC1165AA7FC80_video_dashinit.mp4"
+                type="video/mp4"
+              />
+              Not defined!
+            </video>
+          </div>
+          <div class="mx-4 d-flex flex-column">
+            <h2 class="text-tittle">AI vositalar jamlanmasi</h2>
+            <video
+              controls
+              loop
+              poster="./video-photo.jpg"
+              height="600px"
+              width="335px"
+              class="video"
+            >
+              <source src="./video_2024-09-29_15-57-06.mp4" type="video/mp4" />
+              Not defined!
+            </video>
+          </div>
+          <div class="mx-4 d-flex flex-column">
+            <h2 class="text-tittle">Ish va ijod uchun AIlar</h2>
+            <video
+              controls
+              loop
+              poster="./photo_nizamoff.jpg"
+              height="600px"
+              width="335px"
+              class="video"
+            >
+              <source src="./nizamof_video.mp4" type="video/mp4" />
+              Not defined!
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container-fluid container-ais d-flex justify-content-center"
+      id="tools"
+    >
+      <div class="row d-flex justify-content-around row-checkbox mb-5">
+        <h2 class="main-info text-light">AI xizmatlar va rasmiy linklar</h2>
+        <div
+          class="col-12 col-md-5 box gy-5 p-1 d-flex align-items-center rounded"
+        >
+          <img
+            src="./pngfind.com-black-tick-png-2088023.png"
+            alt="checkbox"
+            class="img-fluid"
+          />
+          <a
+            href="https://chatgpt.com/"
+            target="_blank"
+            class="aiName text-decoration-none w-100"
+            >ChatGPT</a
+          >
+        </div>
+        <div
+          class="col-12 col-md-5 box gy-5 p-1 d-flex align-items-center rounded"
+        >
+          <img
+            src="./pngfind.com-black-tick-png-2088023.png"
+            alt="checkbox"
+            class="img-fluid"
+          />
+          <a
+            href="https://claude.ai/"
+            target="_blank"
+            class="aiName text-decoration-none w-100"
+            >Claude</a
+          >
+        </div>
+        <div
+          class="col-12 col-md-5 box gy-5 p-1 d-flex align-items-center rounded"
+        >
+          <img
+            src="./pngfind.com-black-tick-png-2088023.png"
+            alt="checkbox"
+            class="img-fluid"
+          />
+          <a
+            href="https://gemini.google.com/"
+            target="_blank"
+            class="aiName text-decoration-none w-100"
+            >Gemini</a
+          >
+        </div>
+        <div
+          class="col-12 col-md-5 box gy-5 p-1 d-flex align-items-center rounded"
+        >
+          <img
+            src="./pngfind.com-black-tick-png-2088023.png"
+            alt="checkbox"
+            class="img-fluid"
+          />
+          <a
+            href="https://www.perplexity.ai/"
+            target="_blank"
+            class="aiName text-decoration-none w-100"
+            >Perplexity</a
+          >
+        </div>
+        <div
+          class="col-12 col-md-5 box gy-5 p-1 d-flex align-items-center rounded"
+        >
+          <img
+            src="./pngfind.com-black-tick-png-2088023.png"
+            alt="checkbox"
+            class="img-fluid"
+          />
+          <a
+            href="https://copilot.microsoft.com/"
+            target="_blank"
+            class="aiName text-decoration-none w-100"
+            >Microsoft Copilot</a
+          >
+        </div>
+        <div
+          class="col-12 col-md-5 box gy-5 p-1 d-flex align-items-center rounded"
+        >
+          <img
+            src="./pngfind.com-black-tick-png-2088023.png"
+            alt="checkbox"
+            class="img-fluid"
+          />
+          <a
+            href="https://www.midjourney.com/"
+            target="_blank"
+            class="aiName text-decoration-none w-100"
+            >Midjourney</a
+          >
+        </div>
+        <div
+          class="col-12 col-md-5 box gy-5 p-1 d-flex align-items-center rounded"
+        >
+          <img
+            src="./pngfind.com-black-tick-png-2088023.png"
+            alt="checkbox"
+            class="img-fluid"
+          />
+          <a
+            href="https://runwayml.com/"
+            target="_blank"
+            class="aiName text-decoration-none w-100"
+            >Runway</a
+          >
+        </div>
+        <div
+          class="col-12 col-md-5 box gy-5 p-1 d-flex align-items-center rounded"
+        >
+          <img
+            src="./pngfind.com-black-tick-png-2088023.png"
+            alt="checkbox"
+            class="img-fluid"
+          />
+          <a
+            href="https://elevenlabs.io/"
+            target="_blank"
+            class="aiName text-decoration-none w-100"
+            >ElevenLabs</a
+          >
+        </div>
+        <div
+          class="col-12 col-md-5 box gy-5 p-1 d-flex align-items-center rounded"
+        >
+          <img
+            src="./pngfind.com-black-tick-png-2088023.png"
+            alt="checkbox"
+            class="img-fluid"
+          />
+          <a
+            href="https://cursor.com/"
+            target="_blank"
+            class="aiName text-decoration-none w-100"
+            >Cursor</a
+          >
+        </div>
+        <div
+          class="col-12 col-md-5 box gy-5 p-1 d-flex align-items-center rounded"
+        >
+          <img
+            src="./pngfind.com-black-tick-png-2088023.png"
+            alt="checkbox"
+            class="img-fluid"
+          />
+          <a
+            href="https://www.notion.com/product/ai"
+            target="_blank"
+            class="aiName text-decoration-none w-100"
+            >Notion AI</a
+          >
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3">
+      <p>
+        &copy; 2026
+        <a
+          class="text-decoration-none"
+          href="https://vizitka-blond.vercel.app/"
+          target="_blank"
+          >Ozodboyev Jahongir</a
+        >
+        with <span class="text-primary">ToolFinder</span>. All Rights Reserved.
+      </p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js?v=2026"></script>
+    <script type="text/javascript">
+      var sct = document.createElement("script");
+      sct.setAttribute(
+        "src",
+        "https://embed.adaptichat.com/bubble.js?nocache=" +
+          Date.now() +
+          "-" +
+          Math.floor(Math.random() * 10000),
+      );
+      sct.setAttribute(
+        "chatbotid",
+        "9z4MgxqEmxZsFPemd3pWGaAcbi82_a_ycOq6S5BPhnADFxDEonj",
+      );
+      document.head.appendChild(sct);
+    </script>
+    <!-- Background Audio -->
+  </body>
+</html>

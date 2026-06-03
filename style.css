@@ -1,0 +1,404 @@
+body {
+  clear: both;
+  overflow-x: hidden;
+}
+.col-fixed {
+  position: fixed;
+}
+@media screen and (max-width: 575.9px) {
+  body {
+    background-color: #121234;
+    overflow-x: hidden;
+  }
+  .main-container {
+    height: 100%;
+    background-image: url("./assets/bg/hero-mobile-chatbot.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid;
+  }
+  nav {
+    background-color: #212121;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    margin-top: 0;
+  }
+  .container-cards {
+    background-image: url("./assets/bg/cards-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .container-posts {
+    background-image: url("./assets/bg/posts-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .container-ais {
+    background-image: url("./assets/bg/tools-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .carousel-custom {
+    padding: 24px;
+  }
+  .ai-img {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+  }
+  .font {
+    color: rgb(58, 94, 251);
+    font-size: 20px !important;
+  }
+  .main-info {
+    font-weight: 900;
+    font-size: 40px;
+    width: 90%;
+    padding: 10px 5px;
+    line-height: 1.12;
+    color: bisque;
+  }
+  .account-icon__position {
+    margin-right: 15px;
+  }
+  .img-robot {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    right: 0;
+    margin-top: 20px;
+  }
+  .row-robot {
+    position: relative;
+    right: 0;
+    width: 100%;
+  }
+  .video-column {
+    flex-direction: column;
+  }
+  .text-bg__image {
+    background-color: #121234;
+    padding: 15px;
+  }
+  .box img {
+    width: 10px;
+    height: 10px;
+  }
+  .row-logos {
+    width: 100%;
+    align-items: baseline;
+    justify-content: center;
+  }
+  .row-custom {
+    justify-content: center;
+  }
+  .second-row {
+    position: relative;
+    top: -50px;
+  }
+  .row-logos .col-4 {
+    position: relative;
+    bottom: -170px;
+    margin-bottom: 70px;
+    margin-top: 20px;
+  }
+  .col-12-custom {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 575.9px) {
+  /* Add Mobile devices */
+  .main-container {
+    height: 100%;
+    background-image: url("./assets/bg/hero-ai-robot.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 2px solid;
+  }
+  .container-cards {
+    background-image: url("./assets/bg/cards-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .container-posts {
+    background-image: url("./assets/bg/posts-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .container-ais {
+    background-image: url("./assets/bg/tools-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .carousel-custom {
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    width: 100%;
+    height: 100%; /* To'liq balandlikni egallash uchun */
+  }
+  .carousel-item {
+    height: 100vh; /* Carousel item to'liq ekranni egallaydi */
+    position: relative;
+    overflow: hidden; /* Itemlar to'liq ko'rinishda bo'ladi */
+  }
+
+  .carousel-inner {
+    height: 100%;
+  }
+
+  .row-custom {
+    width: 85%;
+    justify-content: space-between;
+  }
+  .btn-custom {
+    position: relative;
+    bottom: -100px;
+    left: -50px;
+  }
+  .ai-img {
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+  }
+  .font {
+    color: rgb(58, 94, 251);
+    font-size: 10px;
+  }
+  .main-info {
+    font-weight: 900;
+    font-size: 60px;
+    color: rgb(34, 66, 205);
+    /* display: inline-block; */
+    padding: 20px;
+    line-height: 1.12;
+  }
+  .font-size {
+    color: blanchedalmond;
+    font-weight: 900;
+    font-size: 90px;
+  }
+  .box img {
+    width: 40px;
+    height: 40px;
+  }
+  .row-logos {
+    width: 80%;
+    justify-content: end;
+  }
+  .row-robot {
+    justify-content: end;
+  }
+  .col-12-custom {
+    justify-content: end;
+  }
+}
+.container-ais a:hover {
+  color: rgb(104, 245, 104);
+}
+/* .carousel-custom button {
+    padding: 100px;
+} */
+.video {
+  border: 2px solid;
+  border-radius: 15px;
+  padding: auto;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+.bg-custom {
+  /* background-image: url("/Portfolio/home-banner.png");
+    background-repeat: no-repeat; */
+  border: 2px solid red;
+}
+.col-5 img {
+  width: 30px;
+  height: 30px;
+}
+.font-size,
+.font {
+  font-weight: 900;
+  font-size: 30px;
+  padding-left: 10px;
+}
+.aiName {
+  font-weight: 900;
+  font-size: 30px;
+  padding-left: 10px;
+  animation: changeTxtColor 10s infinite;
+}
+.text-tittle {
+  font-weight: 900;
+  font-size: 27px;
+  line-height: 1.12;
+}
+.text-tittle,
+.font-size {
+  color: rgb(230, 188, 188);
+}
+.row-checkbox {
+  width: 80%;
+}
+.box {
+  animation:
+    animateAI 20s infinite,
+    changeTxtColor 20s infinite;
+  position: relative;
+  animation-timing-function: ease;
+}
+.box:hover {
+  transform: scale(1.12, 1.12);
+  background-color: rgb(61, 61, 228);
+  animation-play-state: paused; /* Hoverda animatsiyani to'xtatish */
+  border-color: rgb(61, 61, 228);
+}
+.offcanvas-header img {
+  width: 50px;
+  height: 50px;
+}
+.img-galochka {
+  height: 10px;
+  width: 10px;
+}
+li:hover {
+  background-color: rgb(26, 97, 227);
+}
+li svg {
+  margin: 10px;
+}
+li a {
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+li a:hover {
+  color: white;
+}
+li {
+  align-items: center;
+}
+.a-link {
+  position: relative;
+  top: -1px;
+}
+.trend-list-panel {
+  width: min(92%, 900px);
+  margin: 0 auto;
+  padding: 28px;
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(20, 44, 90, 0.2);
+  border-radius: 8px;
+}
+.trend-list-title {
+  color: rgb(34, 66, 205);
+  font-size: 34px;
+  font-weight: 900;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.trend-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.trend-list-grid a {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid rgba(34, 66, 205, 0.25);
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #142c5a;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.trend-list-grid a:hover {
+  background-color: rgb(34, 66, 205);
+  color: #ffffff;
+}
+.trend-back-btn {
+  display: block;
+  width: min(100%, 260px);
+  margin: 22px auto 0;
+}
+@media screen and (max-width: 575.9px) {
+  .trend-list-panel {
+    width: 100%;
+    padding: 18px;
+  }
+  .trend-list-title {
+    font-size: 26px;
+  }
+  .trend-list-grid {
+    grid-template-columns: 1fr;
+  }
+  .trend-list-grid a {
+    font-size: 18px;
+  }
+}
+@keyframes animateAI {
+  10% {
+    background-color: rgb(0, 0, 139);
+    top: -0.5px;
+  }
+  20% {
+    background-color: rgb(61, 89, 171);
+    top: -1px;
+  }
+  30% {
+    background-color: rgb(65, 105, 225);
+    top: -1.5px;
+  }
+  40% {
+    background-color: rgb(100, 149, 237);
+    top: -2px;
+  }
+  50% {
+    top: -2.5px;
+    background-color: rgb(135, 206, 250);
+  }
+  60% {
+    background-color: rgb(70, 130, 180);
+    top: -2px;
+  }
+  70% {
+    background-color: rgb(34, 85, 139);
+    top: -1.5px;
+  }
+  80% {
+    background-color: rgb(50, 130, 205);
+    top: -1px;
+  }
+  90% {
+    background-color: rgb(148, 178, 237);
+    top: -0.5px;
+  }
+  100% {
+    background-color: rgb(255, 255, 224);
+    top: 0;
+  }
+}
+
+@keyframes changeTxtColor {
+  0% {
+    color: rgb(255, 255, 255);
+  } /* Oq */
+  40% {
+    color: rgb(255, 255, 255);
+  } /* Oq */
+  50% {
+    color: rgb(0, 0, 0);
+  } /* Qora */
+  100% {
+    color: rgb(17, 16, 16);
+  } /* Oq */
+}
